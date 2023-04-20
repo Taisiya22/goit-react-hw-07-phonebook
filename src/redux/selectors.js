@@ -8,7 +8,7 @@ export const filterContact = state => state.filter;
 export const getAllContacts = createSelector([getContact, filterContact], (contacts, filter) => {
     // console.log(contacts)
     // console.log(filter)
-    return contacts?.filter(contact =>
+    return contacts.filter(contact =>
         contact.name.toLowerCase().includes(filter.toLowerCase())
           )
 });

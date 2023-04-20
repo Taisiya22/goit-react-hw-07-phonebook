@@ -4,8 +4,8 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { Section } from 'components/Section/Section';
 import css from './App.module.css';
-import { getAllContacts} from 'redux/selectors';
-import { getIsLoading, getError } from 'redux/selectors';
+// import { getAllContacts} from 'redux/selectors';
+import { getIsLoading} from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 
