@@ -6,14 +6,14 @@ import Notiflix from 'notiflix';
 import css from './Form.module.css';
 
 import { addContact } from 'redux/operations';
-import { getContact } from 'redux/selectors';
+import { selectContact } from 'redux/selectors';
 
 export const Form = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(getContact);
+  const contacts = useSelector(selectContact);
 
   const handleChange = e => {
     const { name, value } = e.target;

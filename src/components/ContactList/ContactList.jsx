@@ -2,21 +2,16 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { deleteContact } from 'redux/operations';
-import { getContact, filterContact } from 'redux/selectors';
+import { selectAllContact } from 'redux/selectors';
 import css from './ContactList.module.css';
 
 export const ContactList = () => {
-  const contacts = useSelector(getContact);
-  const filter = useSelector(filterContact);
+  const contacts = useSelector(selectAllContact);
   const dispatch = useDispatch();
 
   return (
     <ul className={css.list}>
-      {contacts
-        .filter(contact =>
-          contact.name.toLowerCase().includes(filter.toLowerCase())
-        )
-        .map(({ id, name, number }) => (
+      {contacts.map(({ id, name, number }) => (
           <li className={css.item} key={id}>
             {name}: {number}
             <button

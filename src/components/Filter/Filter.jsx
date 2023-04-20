@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { contactsFilter } from 'redux/filterSlice';
-import { filterContact } from 'redux/selectors';
+import { selectfilterContact } from 'redux/selectors';
 import css from './Filter.module.css';
 
 export const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(filterContact);
+  const filter = useSelector(selectfilterContact);
   return (
     <label className={css.search}>
       <p className={css.text}>Find contacts by name</p>
