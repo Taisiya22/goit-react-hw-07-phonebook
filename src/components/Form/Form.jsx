@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
+import Notiflix from 'notiflix';
 import css from './Form.module.css';
 
 import { addContact } from 'redux/operations';
@@ -30,15 +31,15 @@ export const Form = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    
 
     if (contacts.find(contact => contact.name === name)) {
-      alert(`${name} is alredy in contacts`);
+      Notiflix.Notify.warning(`${name} is alredy in contacts`);
     }
 
     if (contacts.find(contact => contact.number === number)) {
+      Notiflix.Notify.warning(`${number} is alredy in contacts`);
     }
-    dispatch(addContact({ name, number, id: nanoid()}));
+    dispatch(addContact({ name, number, id: nanoid() }));
     reset();
   };
   const reset = () => {
