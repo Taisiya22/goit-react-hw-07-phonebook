@@ -32,8 +32,10 @@ extraReducers: {
       state.error = null;
       state.items.push(action.payload)
     },
-    [addContact.rejected]: handleRejected,
-    [deleteContact.pending]: handlePending,
+  [addContact.rejected]: handleRejected,
+    
+
+  [deleteContact.pending]: handlePending,
   [deleteContact.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.error = null;

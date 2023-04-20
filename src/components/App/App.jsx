@@ -8,6 +8,7 @@ import css from './App.module.css';
 import { getIsLoading} from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
+import { Loader } from 'components/Loader/Loader';
 
 
 export const App = () => {
@@ -29,7 +30,7 @@ export const App = () => {
         <Filter />
         <ContactList />
       </Section>
-      {isLoading && <div>Loading...</div> }
+      {isLoading && <Loader/> }
        {/* }  */}
     </div>
   );
